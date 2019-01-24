@@ -1,0 +1,6 @@
+export const secret = 'examplesecretkey'
+export const dbName = 'board-games'
+export const dbUser = 'AZabedovskiy'
+export const dbPass = 'rV5hEmX8pX3YB4T'
+export const dbHost = 'ds145868.mlab.com'
+export const dbPort = '45868'

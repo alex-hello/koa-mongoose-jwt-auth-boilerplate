@@ -1,0 +1,6 @@
+export const secret = 'supersecretcode';
+export const dbName = 'example-db-name';
+export const dbUser = 'AZabedovskiy';
+export const dbPass = 'hardpassword';
+export const dbHost = 'sandbox.mlab.com';
+export const dbPort = '12345';
