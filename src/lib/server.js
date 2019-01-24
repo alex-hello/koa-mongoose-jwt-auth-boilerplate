@@ -11,6 +11,8 @@ import { configureContainer } from './container'
 import { notFoundHandler } from '../middleware/not-found'
 import { errorHandler } from '../middleware/error-handler'
 import { registerContext } from '../middleware/register-context'
+import passport from '../lib/passport'
+import './db'
 
 /**
  * Creates and returns a new Koa application.
@@ -42,20 +44,20 @@ export async function createServer() {
     .use(registerContext)
     // Load routes (API "controllers")
     .use(loadControllers('../routes/*.js', { cwd: __dirname }))
+    .use(loadControllers('../routes/*.js', { cwd: __dirname }))
     // Default handler when nothing stopped the chain.
     .use(notFoundHandler)
+    // Add passport and initialize
+    .use(passport.initialize())
 
   // Creates a http server ready to listen.
   const server = http.createServer(app.callback())
 
-  // Add a `close` event listener so we can clean up resources.
   server.on('close', () => {
-    // You should tear down database connections, TCP connections, etc
-    // here to make sure Jest's watch-mode some process management
-    // tool does not release resources.
     logger.debug('Server closing, bye!')
   })
 
   logger.debug('Server created, ready to listen', { scope: 'startup' })
+
   return server
 }
