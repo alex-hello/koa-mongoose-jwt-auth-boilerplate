@@ -17,6 +17,41 @@ lot to [@Jeffijoe] and his Koa Boilerplate
 <li> Database port in <code>dbPort</code></li>
 </ol>
 
+## `npm run` scripts
+
+There are a few defined run scripts, here's a list of them with a description of what they do. To run them, simply execute `npm run <script name>` - e.g. `npm run dev`
+
+- `start`: Used by the production environment to start the app. This will run a compiled version, so you need to execute `build` first.
+- `build`: Runs the `babel` CLI to compile the app. Files are emitted to `dist/`.
+- `dev`: Runs the app in development mode - uses `babel-node` to compile on-the-fly. Also uses `nodemon` to automatically restart when stuff changes.
+- `test`: Runs tests.
+- `cover`: Runs tests and collects coverage.
+- `lint`: Lints + formats the code.
+
+**Tip**: to pass additional arguments to the actual CLI's being called, do it like in this example:
+
+**For npm:**
+
+```bash
+# Note the `--` before the actual arguments.
+npm run test -- --debug
+```
+
+**For yarn:**
+
+```bash
+# Yarn does not need the `--` before the actual arguments.
+yarn test --debug
+```
+
+## `docker-compose up` scripts
+
+**For running dev:**
+
+```bash
+# Note: use --build only when you want to build. Usually when you change packages.json
+docker-compose up --build
+```
 
 
 # Tasks
