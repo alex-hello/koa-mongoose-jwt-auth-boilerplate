@@ -1,8 +1,8 @@
 {
-  "name": "koa-es7-boilerplate",
+  "name": "koa-es7-auth-boilerplate",
   "version": "0.0.0",
-  "description": "A boilerplate for writing Koa 2 apps with Babel.",
-  "author": "Jeff Hansen",
+  "description": "A boilerplate for writing Koa 2 apps with Babel and authorization via passport",
+  "author": "Alexandr Zabedovskii",
   "license": "MIT",
   "engines": {
     "node": ">=8.0.0",
