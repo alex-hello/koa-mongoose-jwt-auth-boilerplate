@@ -13,7 +13,7 @@ lot to [@Jeffijoe] and his Koa Boilerplate
 git clone git@github.com:ZabedovskiyA/koa-mongoose-jwt-auth-boilerplate.git new-project
 
 # Go to project folder.
-cd new project
+cd new-project
 
 # Install dependencies
 npm i 
