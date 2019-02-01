@@ -7,6 +7,23 @@
 This is one of many build of Koa + Mongoose + Passport.js + ES7. Thx a 
 lot to [@Jeffijoe] and his Koa Boilerplate
 
+## Quick start 
+```bash
+# Clone repository.
+git clone git@github.com:ZabedovskiyA/koa-mongoose-jwt-auth-boilerplate.git new-project
+
+# Go to project folder.
+cd new-project
+
+# Install dependencies
+yarn
+# Run in development mode 
+
+yarn dev
+```
+
+Server will starts at http://localhost:5000/
+
 ## Settings
 <ol>
 <li> In `src/config` create file <code>config.js</code></li>
@@ -16,6 +33,7 @@ lot to [@Jeffijoe] and his Koa Boilerplate
 <li> Database host in <code>dbHost</code></li>
 <li> Database port in <code>dbPort</code></li>
 </ol>
+
 
 ## `npm run` scripts
 
