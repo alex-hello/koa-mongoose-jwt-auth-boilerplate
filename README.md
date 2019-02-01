@@ -16,10 +16,10 @@ git clone git@github.com:ZabedovskiyA/koa-mongoose-jwt-auth-boilerplate.git new-
 cd new-project
 
 # Install dependencies
-npm i 
+yarn
 # Run in development mode 
 
-npm run dev
+yarn dev
 ```
 
 Server will starts at http://localhost:5000/
