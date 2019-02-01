@@ -4,7 +4,7 @@ import { createResponse } from '../utils/response'
 
 export default class UserService {
   async create(ctx, next) {
-    let User = new UserModel(ctx.request.body)
+    const User = new UserModel(ctx.request.body)
 
     // Create user
     try {

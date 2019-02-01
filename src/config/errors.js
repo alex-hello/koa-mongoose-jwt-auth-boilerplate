@@ -3,7 +3,7 @@
  */
 
 export const mongoErrors = {
-  '11000': {
+  11000: {
     code: '11000',
     type: 'duplicate'
   }

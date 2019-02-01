@@ -1,5 +1,5 @@
-import { apiHelper } from './api-helper'
 import { throws } from 'smid'
+import { apiHelper } from './api-helper'
 
 describe('nonexisting routes', () => {
   it('returns 404 with the path and method info', async () => {

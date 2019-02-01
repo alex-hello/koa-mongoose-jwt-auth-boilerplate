@@ -63,7 +63,7 @@ export const auth = async (ctx, next) => {
       const token = sign({ user: payload }, secret, {
         expiresIn: '5h'
       })
-      ctx.body = { ...payload, token: token }
+      ctx.body = { ...payload, token }
     }
   })(ctx, next)
 }

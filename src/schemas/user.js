@@ -40,7 +40,7 @@ const User = new Schema(
  */
 User.virtual('password')
   .set(function(password) {
-    this._plainPassword = password
+    this.plainPassword = password
     if (password) {
       this.salt = crypto.randomBytes(128).toString('base64')
       this.pass = crypto.pbkdf2Sync(password, this.salt, 1, 128, 'sha1')
@@ -50,9 +50,7 @@ User.virtual('password')
       throw new TypeError(schemaErrorRequired('password'))
     }
   })
-  .get(() => {
-    return this._plainPassword
-  })
+  .get(() => this.plainPassword)
 
 User.methods.checkPassword = function(password) {
   if (!password) return false
