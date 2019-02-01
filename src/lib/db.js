@@ -4,21 +4,30 @@
  *  config stored in /src/config/config.js
  */
 
-import mongoose from 'mongoose'
-import { dbHost, dbName, dbPass, dbPort, dbUser } from '../config/config'
+import mongoose from 'mongoose';
+import {
+  dbHost, dbName, dbPass, dbPort, dbUser, dbAuthType,
+} from '../config/config';
 
-mongoose.Promise = Promise
+mongoose.Promise = Promise;
+mongoose.set('debug', true);
+
+let connectionString = `mongodb://${dbHost}:${dbPort}/`;
+
+if (dbAuthType !== 'none') {
+  connectionString = `mongodb://${dbUser}:${dbPass}@${dbHost}:${dbPort}/${dbName}`;
+}
 
 const connection = mongoose.connect(
-  `mongodb://${dbUser}:${dbPass}@${dbHost}:${dbPort}/${dbName}`,
+  connectionString,
   {
-    useMongoClient: true
-  }
-)
-connection.on('error', console.error)
+    useMongoClient: true,
+  },
+);
+connection.on('error', console.error);
 
 export default {
   db: {
-    connection
-  }
-}
+    connection,
+  },
+};
